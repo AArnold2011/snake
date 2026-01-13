@@ -112,6 +112,11 @@ var Game = {
 	},
 	
 	MoveSnake: function(){
+		//Don't move snake if game is paused or ended
+		if(Game.Paused){
+			return;
+		}
+		
 		var cw = Settings.BlockSize;
 		var headx = Game.Snake[0].x;
 		var heady = Game.Snake[0].y;
